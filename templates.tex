@@ -1,0 +1,122 @@
+\subsection{Templates}
+
+\begin{frame}[t]{Polimorfismo}
+\begin{itemize}
+  \item \textmark{Polimorfismo}: Permite que valores de distintos tipos
+        lleven a cabo una misma operación de distinta forma.
+    \begin{itemize}
+      \item Permite poder expresar componentes software de forma genérica.
+    \end{itemize}
+
+  \vfill\pause
+  \item \textmark{Tipos de polimorfismo}:
+    \begin{itemize}
+      \item \textgood{Polimorfismo dinámico} $\Rightarrow$ 
+            \textmark{Prog. orientada a objetos}.
+      \item \textgood{Polimorfismo estático} $\Rightarrow$
+            \textmark{Prog. genérica}.
+    \end{itemize}
+
+  \vfill\pause
+  \item \textmark{Importante}: C++ soporta los dos tipos de polimorfismo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Ventajas del polimorfismo estático}
+\begin{itemize}
+  \item \textgood{Rendimiento}: Código con menos sobrecoste en tiempo de ejecución
+    \begin{itemize}
+      \item Se toman más decisiones en tiempo de compilación.
+      \item Más amigable para el optimizador del compilador.
+      \item Código más predecible $\Rightarrow$ Tiempo real duro.
+      \item Útil en computación numérica.
+    \end{itemize}
+
+  \vfill\pause
+  \item \textgood{Flexibilidad}: Integración de componentes software diseñados
+        de forma separada.
+    \begin{itemize}
+      \item Posibilidad de construir tipos genéricos complejos.
+      \item Es la arquitectura de la propia biblioteca estándar de C++.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Programación genérica}
+\begin{itemize}
+  \item Mecanismo para alcanzar polimorfismo estático.
+\begin{lstlisting}
+template <typename T>
+T square(T x) {
+  return x*x;
+}
+\end{lstlisting}
+
+  \pause\vfill
+  \item \textmark{Objetivo}: Construir componentes que puedan operar con
+        distintos tipos de datos.
+
+  \pause\vfill
+  \item Los tipos deben cumplir requisitos sintácticos y semánticos.
+    \begin{itemize}
+      \item Los requisitos se deducen de forma implícita.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Plantillas de función}
+\begin{block}{Funciones genéricas}
+\begin{lstlisting}
+template <typename T>
+T square(T x) {
+  return x * x;
+}
+\end{lstlisting}
+\end{block}
+
+\vfill\pause
+
+\begin{block}{Utilización}
+\begin{lstlisting}[escapechar=@]
+void f() {
+  std::cout << square(2.0) << "\n";    // square<double>@\pause@
+  std::cout << square(1.5f) << "\n";   // square<float>@\pause@
+  std::cout << square(3) << "\n";      // square<int>@\pause@
+  std::cout << square("hola") << "\n"; // No válido
+}
+\end{lstlisting}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[t,fragile]{Tipos genéricos}
+\vspace{-1em}
+\begin{block}{Un tipo para coordenadas}
+\vspace{-0.25em}
+\begin{lstlisting}
+template <typename T, int D>
+class coordenada {
+public:
+  //...
+  double distancia(coordenada q) const;
+private:
+  T v[D];
+}
+\end{lstlisting}
+\vspace{-1em}
+\end{block}
+
+\vfill\pause
+\begin{block}{Uso}
+\vspace{-0.25em}
+\begin{lstlisting}[escapechar=@]
+void f() {
+  coordenada<double,3> a,b;
+  //...
+  std::cout << a.distancia(b) << "\n";@\pause@
+  //...
+  coordenada<string,2> z; // ???
+}
+\end{lstlisting}
+\end{block}
+\end{frame}

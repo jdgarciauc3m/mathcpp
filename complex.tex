@@ -1,0 +1,26 @@
+\subsection{Números complejos}
+
+\begin{frame}[t,fragile]{Números complejos}
+\begin{itemize}
+  \item Definidos en la biblioteca estándar de forma paramétrica.
+    \begin{itemize}
+      \item Para tipo \cppid{T} $\in$ $\{ \cppid{float}, \cppid{double}, \cppid{long double} \}$
+    \end{itemize}
+\end{itemize}
+\begin{block}{Ejemplo}
+\begin{lstlisting}
+void f() {
+  using namespace std;
+  using namespace std::complex_literals;
+
+  complex<double> a = 2 + 3i;
+  complex<double> b = 2 - 3i;
+  complex<double> c = -2 + 5i;
+  
+  auto d = cos(a * b + c);
+ 
+  cout << "Magnitud: " << abs(d) << ", ángulo: " << arg(d) << "\n";
+}
+\end{lstlisting}
+\end{block}
+\end{frame}

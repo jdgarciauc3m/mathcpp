@@ -1,0 +1,34 @@
+\subsection{Matrices numéricas}
+
+\begin{frame}[t,fragile]{Arrays de valores}
+\begin{itemize}
+  \item Un \cppid{valarray<T>} es un array de valores numéricos.
+    \begin{itemize}
+      \item Garantiza la ausencia de ciertos tipos de \emph{aliasing}.
+      \item Especialmente amigable con la vectorización.
+    \end{itemize}
+\end{itemize}
+\pause
+\begin{block}{Ejemplo}
+\begin{lstlisting}
+std::valarray<double> v = get_values();
+std::valarray<double> w = get_values();
+std::valarray<double> z = v + 4 * w;
+\end{lstlisting}
+\end{block}
+\begin{itemize}
+  \item \textbad{Nota}: Permite operaciones con slices generalizados
+        multidemensionales.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Soporte de Álgebra lineal}
+\begin{itemize}
+  \item Evolución en bibliotecas de terceras partes.
+  \vspace{2em}
+  \item Trabajo actual hacia la estandarización de una biblioteca de álgebra lineal.
+    \begin{itemize}
+      \item Marco temporal: 2020--2023.
+    \end{itemize}
+\end{itemize}
+\end{frame}

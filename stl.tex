@@ -1,0 +1,129 @@
+\subsection{Contenedores, iteradores, algoritmos}
+
+\begin{frame}[t]{STL: Standard Template Library}
+\begin{itemize}
+  \item Alex Stepanov.
+    \begin{itemize}
+      \item Abstracción a partir de algoritmos concretos y eficientes.
+      \item Obtención de algoritmos que se pueden usar con distintas represetaciones
+            de datos.
+      \item Una de las claves del éxito de C++.
+    \end{itemize}
+
+  \vfill\pause
+  \item Elementos de STL:
+    \begin{itemize}
+      \item Diversidad de contenedores.
+      \item Iteradores sobre contenederes.
+      \item Algoritmos independientes de contenedores expresados en
+            términos de iteradores.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{¿Qué es un contenedor?}
+\begin{itemize}
+  \item Un \textgood{contenedor} es una estructura que puede
+        \textmark{almacenar valores}.
+    \begin{itemize}
+      \item En STL los contenedores son homogéneos.
+    \end{itemize}
+
+  \vfill\pause
+  \item Tipos principales de contenedores:
+    \begin{itemize}
+      \item \textmark{Contenedores de secuencia}: Almacenan una secuencia de valores.
+      \item \textmark{Contenedores asociativos}: Almacenan pares \emph{clave-valor}.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Contenedores de secuencia}
+\begin{itemize}
+  \item Almacenan una secuencia de valores de un determinando tipo.
+  \item Pueden permitir el acceso mediante operaciones propias o
+        a través de iteradores.
+  \item Varios compromisos: \cppid{vector}, \cppid{list}, \cppid{deque}, \cppid{forward\_list}.
+\end{itemize}
+\begin{block}{Reduciendo un vector}
+\begin{lstlisting}
+double suma(std::vector<double> & v) {
+  double r = 0.0;
+  for (size_t i=0; i<v.size(); ++i) {
+    r += v[i];
+  }
+  return r;
+}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[t,fragile]{Iteradores}
+\begin{itemize}
+  \item Un \textgood{iterador} es un valor que permite recorrer los elementos
+        de un contenedor.
+    \begin{itemize}
+      \item Cada contenedor tiene un tipo de iterador asociado.
+    \end{itemize}
+
+  \vfill\pause
+  \item Operaciones mínimas:
+    \begin{itemize}
+      \item Acceder al objeto apuntado (\cppid{*i}).
+      \item Avanzar al siguiente elemento (\cppid{++i}).
+      \item Comparar si apuntan a la misma posición (\cppid{i!=j}).
+    \end{itemize}
+
+  \vfill\pause
+  \item Posiciones especiales:
+    \begin{itemize}
+      \item \textgood{Inicio}: Primera posición del contenedor.
+      \item \textgood{Fin}: Siguiente a la última posición del contenedor.
+    \end{itemize}
+  \vfill
+  \item \textmark{Observación}: Cualquier subsecuencia se puede representar
+        como un intervalo semiabierto \cppid{[i,j)}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Uso de iteradores}
+\begin{block}{Reducción de un vector}
+\begin{lstlisting}[escapechar=@]
+double suma1(std::vector<double> & v) {
+  double r = 0.0;
+  for (typename std::vector<double>::iterator i = v.begin(); i!=v.end(); ++i) {
+    r += *i;
+  }
+  return r;
+}
+@\pause@
+double suma2(std::vector<double> & v) {
+  double r = 0.0;
+  for (auto i = v.begin(); i!=v.end(); ++i) {
+    r += *i;
+  }
+  return r;
+}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[t,fragile]{Algoritmos}
+\begin{itemize}
+  \item Un \textgood{algoritmo} sobre una secuencia de datos se puede
+        definir en términos de los iteradores que definen la secuencia.
+    \begin{itemize}
+      \item Esto independiza los algoritmos de las estructuras de datos concretas.
+      \item Hace los algoritmos válidos para estructuras de datos que 
+            todavía no existen.
+    \end{itemize}
+\end{itemize}
+\vfill\pause
+\begin{block}{Reducción de un vector}
+\begin{lstlisting}
+double suma(const std::vector<double> & v) {
+  return std::reduce(v.begin(), v.end());
+}
+\end{lstlisting}
+\end{block}
+\end{frame}

@@ -109,13 +109,67 @@
 \end{frame}
 
 \begin{frame}[t,fragile]{¿Qué pinta tiene?}
-\begin{lstlisting}
+	\begin{lstlisting}[escapechar=@]
+#include <iostream>
+#include <random>
+#include <map>
+
 int main() {
+  std::mt19937_64 gen;
+  std::poisson_distribution dist{2.5}; // mean=2.5
+@\pause@
+  constexpr int max=10@'@000;@\pause@
+  std::map<int,long> freq;@\pause@
+  for (int i=0; i<max; ++i) {
+    int x = dist(gen);@\pause@
+    freq[x]++;
+  }
+@\pause@
+  for (auto [x,f] : freq) {
+    std::cout << x << ": " << f << "\n";
+  }
 }
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[t]{Una breve historia}
+\begin{frame}[t]{Origen}
+\begin{columns}[T]
+\column{.4\textwidth}
+\includegraphics[width=\textwidth]{img/bjarne.png}
+
+\column{.6\textwidth}
+\begin{itemize}
+  \item Evolución:
+    \begin{itemize}
+  \item 1979-1982: C with Classes.
+  \item 1982-1984: C++ (cfront).
+  \item 1986-1989: C++ 2.0 (cfront).
+  \item 1988-1990: ARM C++.
+  \item 1990: estandarización.
+    \end{itemize}
+  \vfill
+  \item Usuarios:
+    \begin{itemize}
+      \item 1979: 1
+      \item 1980: 16
+      \item 1982: 85
+      \item 1985: 500
+      \item 1987: 4,000
+      \item 1989: 50,000
+      \item 2019: 4,500,000
+    \end{itemize}
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Normalización}
+\vspace{-1em}
+\begin{columns}[T]
+
+\column{.3\textwidth}
+\includegraphics[width=\textwidth]{logos/iso.png}
+
+\column{.7\textwidth}
 \begin{itemize}
   \item 1998: \textgood{C++98} $\rightarrow$ \textmark{ISO/IEC 14882:1998}.
 
@@ -143,10 +197,14 @@ int main() {
   \vfill\pause
   \item 2020: \textgood{C++20} $\rightarrow$ \textbad{ISO/IEC 14882:????}.
 \end{itemize}
+
+\end{columns}
 \end{frame}
 
 \begin{frame}{C++ timeline}
+\begin{center}
 \includegraphics[height=.8\textheight]{img/wg21-timeline.png}
+\end{center}
 \end{frame}
 
 \begin{frame}[t]{Principios de diseño}
@@ -162,6 +220,6 @@ int main() {
 \end{frame}
 
 \begin{frame}{El comité C++}
-\includegraphics[width=\textwidth]{img/wg21-structure.png}
+\includegraphics[width=.8\textwidth]{img/wg21-structure.png}
 \end{frame}
 

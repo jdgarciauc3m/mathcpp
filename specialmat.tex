@@ -1,0 +1,45 @@
+\subsection{Funciones matemáticas especiales}
+
+\begin{frame}[t]{Funciones matemáticas especiales}
+\begin{itemize}
+  \item Origen:
+    \begin{itemize}
+      \item \textgood{2007}: Informe técnico \textmark{ISO/IEC TR 17968:2007}.
+      \item \textgood{2010}: Estándar internacional \textmark{ISO/IEC 29124:2010}.
+      \item \textgood{2017}: Incorporadas a C++17 \textmark{ISO/IEC 14882:2017}.
+    \end{itemize}
+
+  \vfill\pause
+  \item Funciones:
+    \begin{itemize}
+      \item Leguerre: Polinomio asociado, polinomio de Leguerre.
+      \item Legendre: Polinomio asociado, polinomio de Legendre.
+      \item Hermite: Polinomio de Hermite.
+      \item Funciones elípticas: Primera, segunda y tercera integral elíptica.
+        \begin{itemize}
+          \item Completas e incompletas.
+        \end{itemize}
+      \item Funciones de Bessel: Regular, irregular, de primer orden.
+        \begin{itemize}
+          \item Cilíndricas y esféricas.
+        \end{itemize}
+      \item Integral exponencial.
+      \item Otras funciones: Función beta, función z de Rieman.. 
+    \end{itemize}
+  
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Ejemplo}
+\begin{block}{Polinomios}
+\begin{lstlisting}
+int main() {
+  using namespace std;
+
+  cout << "Hermite3(10)" << hermite(3,10) << "\n";
+  cout << "Legendre3(0.25)" << legendre(3,0.25) << "\n";
+  cout << "Leguerre3(0.5)" << leguerre(3,0.25) << "\n";
+}
+\end{lstlisting}
+\end{block}
+\end{frame}

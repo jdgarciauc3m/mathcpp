@@ -1,0 +1,105 @@
+\section{El coste de la abstracción}
+
+\begin{frame}[t]{Todo el mundo sabe que...}
+\begin{itemize}
+  \pause
+  \item C++ es más lento que C.
+    \begin{itemize}
+      \item Debe serlo puesto que es de más alto nivel.
+    \end{itemize}
+
+  \vfill\pause
+  \item La abstracción siempre tiene un precio en tiempo de ejecución.
+    \begin{itemize}
+      \item Así que no hay nada como el código de bajo nivel.
+      \item Si puede ser en ensamblador.
+    \end{itemize}
+
+  \vfill\pause
+  \item El mejor rendimiento se obtiene con optimizaciones de bajo nivel.
+    \begin{itemize}
+      \item Cuanto más pegado al hardware mejor.
+    \end{itemize}
+
+  \vfill\pause
+  \item Cada enfoque de resolución de un problema necesita una versión distinta
+        del código.
+    \begin{itemize}
+      \item No va a ser lo mismo una versión secuencial que una con OpenMP.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Caso práctico: Fludianimate}
+\begin{itemize}
+  \item Parte del benchmark PARSEC.
+    \begin{itemize}
+      \item \url{http://parsec.cs.princeton.edu}
+      \item Originalmente desarrollado por Intel.
+      \item Versiones en simple y doble precisión.
+      \item Versiones secuencial, PThreads, Intel TBB.
+    \end{itemize}
+
+  \vfill\pause
+  \item Características:
+    \begin{itemize}
+      \item en su mayoría código tipo-C.
+      \item Uso de preprocesador.
+      \item Funciones sin paso de parámetros accediendo a globales.
+      \item Pool de memoria ajustado a caché de procesador.
+    \end{itemize}
+  
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Métricas}
+\begin{tabular}{|l|r|r|}
+\hline
+Métrica & Original & Refactorizado\\
+\hline
+\hline
+Lines		& 1873	& 1330\\
+Effective LOC 	& 1093	& 846\\
+Logical LOC 	& 880	& 449 \\
+\hline
+Functions	& 87	& 125\\
+Max Cyclomatic Complexity	& 33	& 8\\
+Average Cycolomatic Complexity	& 3.39	& 1.35\\
+\hline
+Classes		& 6	& 16 \\
+Max Cyclomatic Complexity	& 65 & 45\\
+Average Cyclomatic Complexity	& 11.00 & 9.12\\
+\hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Tiempo de ejecución por iteración}
+\begin{tikzpicture}
+\begin{semilogyaxis}[xlabel=Iterations,ylabel=Normalized Execution time (us), legend pos=south east]
+\addplot table[header=false]{perf-fluid/p2000/fanimate.seq.norm.dat};
+\addlegendentry{original}
+\addplot table[header=false]{perf-fluid/p2000/animate.seq.norm.dat};
+\addlegendentry{refactored}
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Tiempo de ejecución por iteración (4 cores, 8 threads)}
+\begin{tikzpicture}
+\begin{semilogyaxis}[xlabel=Iterations,ylabel=Normalized Execution time (us), legend pos=south east]
+\addplot table[header=false]{perf-fluid/p500/fanimate.tbb.8.norm.dat};
+\addlegendentry{original}
+\addplot table[header=false]{perf-fluid/p500/animate.tbb.8.norm.dat};
+\addlegendentry{refactored}
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[t]{Para saber más}
+\begin{itemize}
+  \item \textmark{Improving performance and maintainability through refactoring in C++11}.
+        J.D. Garcia y B. Stroustrup.
+        ISO C++ Foundation, 2015.
+        \url{https://isocpp.org/blog/2015/10/garcia-stroustrup-refactoring}.
+\end{itemize}
+\end{frame}

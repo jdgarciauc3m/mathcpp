@@ -1,0 +1,109 @@
+\section{Programación basada en contratos}
+
+\begin{frame}[t]{Corrección frente a robustez}
+\begin{itemize}
+  \item En el diseño de un componente hay una tensión entre
+        dos propiedades \textmark{relacionadas} y \textmark{ortogonales}:
+    \begin{itemize}
+      \item \textgood{robustez}.
+      \item \textgood{corrección}.
+    \end{itemize} 
+
+  \vfill\pause
+  \item \textgood{Robustez}: Capacidad de un componente de reaccionar
+        de forma apropiada a condiciones anormales.
+
+  \vfill\pause
+  \item \textgood{Corrección}: Grado en el que un componente software
+        cumple con su especificación.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Programación basada en contratos}
+\begin{itemize}
+  \item Basada originalmente en las ideas de la \textmark{lógica de Hoare}.
+    \begin{itemize}
+      \item Conceptos de \textgood{precondición} y \textgood{postcondición}.
+    \end{itemize}
+  \vfill\pause
+  \item Desarrollado posteriormente por Bertrand Meyer en el lenguaje Eiffel.
+  \vfill
+  \item Metáfora de componentes como \textgood{cliente} y \textgood{servidor}
+        que se relacionan mediante un \textmark{contrato} con 
+        \textmark{obligaciones} y \textmark{beneficios}.
+    \begin{itemize}
+      \item\pause Las \textgood{precondiciones} son una 
+          \textmark{obligación} para el \textgood{cliente} y un
+          \textmark{beneficio} para el \textgood{suministrador}.
+      \item\pause Las \textgood{postcondiciones} son una
+          \textmark{obligación} para el \textgood{suministrador} y un
+          \textgood{beneficio} para el \textmark{cliente}.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Comprobaciones}
+\begin{itemize}
+  \item Una \textmark{comprobación} es un predicado que forma parte
+        de un contrato y que se comprueba en tiempo de ejecución
+        para determinar si el software tiene un defecto.
+\end{itemize}
+\begin{block}{Contrato para una pila}
+\begin{lstlisting}
+template <typename T>
+class stack {
+public:
+  stack() [[ensures: size() == 0]];
+
+  int size() [[ensures r: r>=0]];
+
+  void push(const T & x)
+    [[expects: !is_full()]]
+    [[ensures: !is_empty()]];
+  //...
+}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[t,fragile]{Axiomas}
+\begin{itemize}
+  \item Un \textmark{Axioma} es un postulado que se tiene por cierto.
+    \begin{itemize}
+      \item Se pueden utilizar en el análisis de los programas para
+            determinar inconsistencias.
+      \item Se pueden utilizar durante la optimización del programa.
+      \item Permiten el uso de predicados que no son \emph{idempotentes}.
+    \end{itemize}
+\end{itemize}
+\begin{block}{Axiomas de la búsqueda binaria}
+\begin{lstlisting}
+template <typename Iter, typename T>
+Iter busqueda_binaria(Iter primero, Iter ultimo, T value)
+  [[expect axiom: se_puede_llegar(primero,ultimo)]]
+  [[expect audit: esta_ordenado(primero,ultimo)]]
+  [[ensures axiom res: se_puede_llegar(primero,res) &&
+                       se_puede_llegar(res,ultimo)]];
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{Para saber más}
+\begin{itemize}
+  \item \textmark{An axiomatic basis for computer programming}.
+        C.A.R. Hoare.
+        Communications of the ACM, 12(1):576--580.
+        1969.
+
+  \vfill
+  \item \textmark{Object Oriented Software Construction}.
+        Bertrand Meyer.
+        Prentice-Hall, 1997.
+
+  \vfill
+  \item P0542R5: \textmark{Support for contract based programming in C++}
+        G. Dos Reis, J.D. Garcia, J. Lakos, A. Meredith, N. Myers, B. Stroustrup.
+        ISO/IEC JTC1/SC22/WG21 working paper. Junio 2018.
+        \url{http://wg21.link/p0542r5}.
+\end{itemize}
+\end{frame}

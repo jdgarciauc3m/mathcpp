@@ -1,0 +1,18 @@
+\subsection{Expresiones lambda}
+
+\begin{frame}[t,fragile]{Lambdas}
+\begin{itemize}
+  \item Inspiradas en cálculo lambda y programación funcional.
+  \item Permiten definir funciones de orden superior.
+\end{itemize}
+\vfill\pause
+\begin{block}{Ordenación en valor absoluto}
+\begin{lstlisting}
+void ordena_abs(std::vector<double> & v) {
+  std::sort(v.begin(), v.end(),
+    [](double x, double y) { return std::abs(x) < std::abs(y); }
+  );
+}
+\end{lstlisting}
+\end{block}
+\end{frame}

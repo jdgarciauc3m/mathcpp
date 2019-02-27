@@ -1,0 +1,17 @@
+# started on Mon Apr 29 14:35:50 2013
+
+1264131292966:instructions
+1677013485:cache-references
+1139137355:cache-misses
+153520385713:branch-instructions
+14961268277:branch-misses
+391692750282:L1-dcache-loads
+5266398538:L1-dcache-load-misses
+61798318125:L1-dcache-stores
+274368996:L1-dcache-store-misses
+767280375274:L1-icache-loads
+53685107:L1-icache-load-misses
+1526732924:LLC-loads
+1040922842:LLC-load-misses
+1928377844:LLC-stores
+120647013:LLC-store-misses

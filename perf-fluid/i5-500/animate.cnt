@@ -1,0 +1,15 @@
+instructions 1264131292966
+cache-references 1677013485
+cache-misses 1139137355
+branch-instructions 153520385713
+branch-misses 14961268277
+L1-dcache-loads 391692750282
+L1-dcache-load-misses 5266398538
+L1-dcache-stores 61798318125
+L1-dcache-store-misses 274368996
+L1-icache-loads 767280375274
+L1-icache-load-misses 53685107
+LLC-loads 1526732924
+LLC-load-misses 1040922842
+LLC-stores 1928377844
+LLC-store-misses 120647013

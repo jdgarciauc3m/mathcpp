@@ -1,0 +1,160 @@
+\section{Conceptos}
+
+\begin{frame}[t]{Gran éxito de la programación genérica}
+\begin{itemize}
+  \item Algunas razones:
+    \begin{itemize}
+      \item Flexibilidad: Las plantillas son un sub-lenguaje \textmark{Turing-complete}.
+
+      \vfill\pause
+      \item Seguridad en tipos: Detección de inconsistencias en tiempo de compilación.
+
+      \vfill\pause
+      \item Mecanismos de especialización.
+        \begin{itemize}
+          \item Tipos irregulares.
+          \item Metaprogramación genérica.
+          \item Optimizaciones basadas en tipos.
+        \end{itemize}
+
+      \vfill\pause
+      \item Rendimiento superior.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Pero...}
+\begin{itemize}
+  \item También tiene grandes inconvenientes
+    \begin{itemize}
+      \vfill\item Sintaxis verbosa.
+      \vfill\item \emph{Duck-typing}.
+      \vfill\item Mensajes de error incomprensibles.
+      \vfill\item Sobrecarga confusa.
+      \vfill\item Problemas de organización de código.
+      \vfill\item Compilación lenta.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]
+\begin{block}{Sumando de forma genérica}
+\begin{lstlisting}
+template <typename T>
+T suma(const vector<T> & v) {
+  T r{};
+  for (auto i = v.begin(); i!=v.end(); ++i) {
+    r+= *i;
+  }
+}
+
+void f() {
+  std::vector<double> v { 1.0, 2.0, 3.0 };
+  std::cout << suma(v) << "\n";
+
+  std::vector<complex<float>> w = readvalues();
+  std::cout << suma(v) << "\n";
+
+  std::vector<std::string> u {"C++", "mola"};
+  std::cout << suma(u) << "\n"; // un no es un vector de números???
+}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{Tipos y conceptos}
+\begin{itemize}
+  \item \textgood{Tipo}:
+    \begin{itemize}
+      \item Especifica el conjunto de valores que puede tomar una entidad.
+      \item Define el conjunto de operaciones que son aplicables a sus valores.
+      \item Especifica la representación en memoria.
+    \end{itemize}
+
+  \vfill\pause
+  \item \textgood{Concepto}:
+    \begin{itemize}
+      \item Especifica el conjunto de tipos que satisfacen el concepto.
+      \item Define el conjunto de operaciones que son aplicables a sus valores.
+      \item \textbad{No} especifica la representación en memoria.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]
+\begin{block}{Sumando de forma genérica}
+\begin{lstlisting}
+template <typename N>
+  requires Number<N>
+N suma(const vector<N> & v) {
+  N r{};
+  for (auto i = v.begin(); i!=v.end(); ++i) {
+    r+= *i;
+  }
+}
+
+void f() {
+  std::vector<double> v { 1.0, 2.0, 3.0 };
+  std::cout << suma(v) << "\n";
+
+  std::vector<complex<float>> w = readvalues();
+  std::cout << suma(v) << "\n";
+
+  std::vector<std::string> u {"C++", "mola"};
+  std::cout << suma(u) << "\n"; // un no es un vector de números???
+}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[t,fragile]
+\begin{block}{Sumando de forma genérica}
+\begin{lstlisting}
+template <Number N>
+N suma(const vector<N> & v) {
+  N r{};
+  for (auto i = v.begin(); i!=v.end(); ++i) {
+    r+= *i;
+  }
+}
+
+void f() {
+  std::vector<double> v { 1.0, 2.0, 3.0 };
+  std::cout << suma(v) << "\n";
+
+  std::vector<complex<float>> w = readvalues();
+  std::cout << suma(v) << "\n";
+
+  std::vector<std::string> u {"C++", "mola"};
+  std::cout << suma(u) << "\n"; // un no es un vector de números???
+}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[t,fragile]{Definiendo conceptos}
+\begin{block}{El concepto \emph{Number}}
+\begin{lstlisting}
+template <typename N>
+concept Number =
+  requires (N x, N y) {
+    { N{} };
+    { N{x} };
+    { x += y } -> N&;
+  };
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{Para saber más}
+\begin{itemize}
+  \item ISO/IEC TS 19217:2015: \textmark{C++ Extensions for Concepts}.
+        Technical Specification.
+        ISO.
+
+  \vfill
+  \item \textmark{Concepts: The future of generic programmiing (the future is here)}.
+        Bjarne Stroustrup.
+        \url{https://youtu.be/PU-2ntDuF10}
+\end{itemize}
+\end{frame}

@@ -1,0 +1,321 @@
+vm.drop_caches = 3
+bin/fanimate 50   19987852
+vm.drop_caches = 3
+bin/fanimate 100   49538227
+vm.drop_caches = 3
+bin/fanimate 150   76779467
+vm.drop_caches = 3
+bin/fanimate 200   99073512
+vm.drop_caches = 3
+bin/fanimate 250   122852470
+vm.drop_caches = 3
+bin/fanimate 300   150964228
+vm.drop_caches = 3
+bin/fanimate 350   179200871
+vm.drop_caches = 3
+bin/fanimate 400   202473232
+vm.drop_caches = 3
+bin/fanimate 450   225971549
+vm.drop_caches = 3
+bin/fanimate 500   254258600
+vm.drop_caches = 3
+bin/animate 50   16909738
+vm.drop_caches = 3
+bin/animate 100   43272972
+vm.drop_caches = 3
+bin/animate 150   67514620
+vm.drop_caches = 3
+bin/animate 200   87185220
+vm.drop_caches = 3
+bin/animate 250   108656719
+vm.drop_caches = 3
+bin/animate 300   134287011
+vm.drop_caches = 3
+bin/animate 350   160052419
+vm.drop_caches = 3
+bin/animate 400   181055390
+vm.drop_caches = 3
+bin/animate 450   202616105
+vm.drop_caches = 3
+bin/animate 500   228776909
+vm.drop_caches = 3
+bin/fanimate_tbb 1 50   26703995
+vm.drop_caches = 3
+bin/fanimate_tbb 2 50   17083805
+vm.drop_caches = 3
+bin/fanimate_tbb 4 50   12166543
+vm.drop_caches = 3
+bin/fanimate_tbb 8 50   10646846
+vm.drop_caches = 3
+bin/fanimate_tbb 16 50   10885921
+vm.drop_caches = 3
+bin/fanimate_tbb 32 50   11006537
+vm.drop_caches = 3
+bin/fanimate_tbb 64 50   10449710
+vm.drop_caches = 3
+bin/fanimate_tbb 1 100   62619203
+vm.drop_caches = 3
+bin/fanimate_tbb 2 100   38300934
+vm.drop_caches = 3
+bin/fanimate_tbb 4 100   25798501
+vm.drop_caches = 3
+bin/fanimate_tbb 8 100   22557273
+vm.drop_caches = 3
+bin/fanimate_tbb 16 100   22681181
+vm.drop_caches = 3
+bin/fanimate_tbb 32 100   22722343
+vm.drop_caches = 3
+bin/fanimate_tbb 64 100   22093311
+vm.drop_caches = 3
+bin/fanimate_tbb 1 150   96875652
+vm.drop_caches = 3
+bin/fanimate_tbb 2 150   58584678
+vm.drop_caches = 3
+bin/fanimate_tbb 4 150   39412490
+vm.drop_caches = 3
+bin/fanimate_tbb 8 150   34148504
+vm.drop_caches = 3
+bin/fanimate_tbb 16 150   34311590
+vm.drop_caches = 3
+bin/fanimate_tbb 32 150   34562364
+vm.drop_caches = 3
+bin/fanimate_tbb 64 150   33239092
+vm.drop_caches = 3
+bin/fanimate_tbb 1 200   126523620
+vm.drop_caches = 3
+bin/fanimate_tbb 2 200   77268299
+vm.drop_caches = 3
+bin/fanimate_tbb 4 200   52549904
+vm.drop_caches = 3
+bin/fanimate_tbb 8 200   45091528
+vm.drop_caches = 3
+bin/fanimate_tbb 16 200   45377255
+vm.drop_caches = 3
+bin/fanimate_tbb 32 200   45513746
+vm.drop_caches = 3
+bin/fanimate_tbb 64 200   44181706
+vm.drop_caches = 3
+bin/fanimate_tbb 1 250   157620240
+vm.drop_caches = 3
+bin/fanimate_tbb 2 250   96720182
+vm.drop_caches = 3
+bin/fanimate_tbb 4 250   65567538
+vm.drop_caches = 3
+bin/fanimate_tbb 8 250   56339024
+vm.drop_caches = 3
+bin/fanimate_tbb 16 250   56525808
+vm.drop_caches = 3
+bin/fanimate_tbb 32 250   56698043
+vm.drop_caches = 3
+bin/fanimate_tbb 64 250   55720108
+vm.drop_caches = 3
+bin/fanimate_tbb 1 300   192112847
+vm.drop_caches = 3
+bin/fanimate_tbb 2 300   116912257
+vm.drop_caches = 3
+bin/fanimate_tbb 4 300   79064072
+vm.drop_caches = 3
+bin/fanimate_tbb 8 300   66828191
+vm.drop_caches = 3
+bin/fanimate_tbb 16 300   68215453
+vm.drop_caches = 3
+bin/fanimate_tbb 32 300   68357663
+vm.drop_caches = 3
+bin/fanimate_tbb 64 300   66551326
+vm.drop_caches = 3
+bin/fanimate_tbb 1 350   227171110
+vm.drop_caches = 3
+bin/fanimate_tbb 2 350   137780314
+vm.drop_caches = 3
+bin/fanimate_tbb 4 350   92986872
+vm.drop_caches = 3
+bin/fanimate_tbb 8 350   78262681
+vm.drop_caches = 3
+bin/fanimate_tbb 16 350   79633708
+vm.drop_caches = 3
+bin/fanimate_tbb 32 350   79675836
+vm.drop_caches = 3
+bin/fanimate_tbb 64 350   77629752
+vm.drop_caches = 3
+bin/fanimate_tbb 1 400   257159280
+vm.drop_caches = 3
+bin/fanimate_tbb 2 400   156575708
+vm.drop_caches = 3
+bin/fanimate_tbb 4 400   105587724
+vm.drop_caches = 3
+bin/fanimate_tbb 8 400   90751242
+vm.drop_caches = 3
+bin/fanimate_tbb 16 400   90863973
+vm.drop_caches = 3
+bin/fanimate_tbb 32 400   90890604
+vm.drop_caches = 3
+bin/fanimate_tbb 64 400   88504526
+vm.drop_caches = 3
+bin/fanimate_tbb 1 450   288408472
+vm.drop_caches = 3
+bin/fanimate_tbb 2 450   175659410
+vm.drop_caches = 3
+bin/fanimate_tbb 4 450   118723949
+vm.drop_caches = 3
+bin/fanimate_tbb 8 450   101830192
+vm.drop_caches = 3
+bin/fanimate_tbb 16 450   103603285
+vm.drop_caches = 3
+bin/fanimate_tbb 32 450   102005499
+vm.drop_caches = 3
+bin/fanimate_tbb 64 450   99237192
+vm.drop_caches = 3
+bin/fanimate_tbb 1 500   323407912
+vm.drop_caches = 3
+bin/fanimate_tbb 2 500   196122748
+vm.drop_caches = 3
+bin/fanimate_tbb 4 500   132776478
+vm.drop_caches = 3
+bin/fanimate_tbb 8 500   111804936
+vm.drop_caches = 3
+bin/fanimate_tbb 16 500   113377095
+vm.drop_caches = 3
+bin/fanimate_tbb 32 500   113463384
+vm.drop_caches = 3
+bin/fanimate_tbb 64 500   110163140
+vm.drop_caches = 3
+bin/animate_tbb 1 50   22264198
+vm.drop_caches = 3
+bin/animate_tbb 2 50   12268315
+vm.drop_caches = 3
+bin/animate_tbb 4 50   7458854
+vm.drop_caches = 3
+bin/animate_tbb 8 50   6764715
+vm.drop_caches = 3
+bin/animate_tbb 16 50   8114136
+vm.drop_caches = 3
+bin/animate_tbb 32 50   10113757
+vm.drop_caches = 3
+bin/animate_tbb 64 50   14487878
+vm.drop_caches = 3
+bin/animate_tbb 1 100   53698884
+vm.drop_caches = 3
+bin/animate_tbb 2 100   29244103
+vm.drop_caches = 3
+bin/animate_tbb 4 100   17219662
+vm.drop_caches = 3
+bin/animate_tbb 8 100   15297586
+vm.drop_caches = 3
+bin/animate_tbb 16 100   18174276
+vm.drop_caches = 3
+bin/animate_tbb 32 100   22309427
+vm.drop_caches = 3
+bin/animate_tbb 64 100   32221507
+vm.drop_caches = 3
+bin/animate_tbb 1 150   82965426
+vm.drop_caches = 3
+bin/animate_tbb 2 150   45185326
+vm.drop_caches = 3
+bin/animate_tbb 4 150   26489283
+vm.drop_caches = 3
+bin/animate_tbb 8 150   23397425
+vm.drop_caches = 3
+bin/animate_tbb 16 150   27492352
+vm.drop_caches = 3
+bin/animate_tbb 32 150   33902770
+vm.drop_caches = 3
+bin/animate_tbb 64 150   48549103
+vm.drop_caches = 3
+bin/animate_tbb 1 200   107922098
+vm.drop_caches = 3
+bin/animate_tbb 2 200   59033921
+vm.drop_caches = 3
+bin/animate_tbb 4 200   34846676
+vm.drop_caches = 3
+bin/animate_tbb 8 200   30510433
+vm.drop_caches = 3
+bin/animate_tbb 16 200   35751435
+vm.drop_caches = 3
+bin/animate_tbb 32 200   44137512
+vm.drop_caches = 3
+bin/animate_tbb 64 200   63225979
+vm.drop_caches = 3
+bin/animate_tbb 1 250   134524287
+vm.drop_caches = 3
+bin/animate_tbb 2 250   73240984
+vm.drop_caches = 3
+bin/animate_tbb 4 250   43085611
+vm.drop_caches = 3
+bin/animate_tbb 8 250   38013744
+vm.drop_caches = 3
+bin/animate_tbb 16 250   44568757
+vm.drop_caches = 3
+bin/animate_tbb 32 250   54270251
+vm.drop_caches = 3
+bin/animate_tbb 64 250   77850856
+vm.drop_caches = 3
+bin/animate_tbb 1 300   165236856
+vm.drop_caches = 3
+bin/animate_tbb 2 300   90184776
+vm.drop_caches = 3
+bin/animate_tbb 4 300   53209124
+vm.drop_caches = 3
+bin/animate_tbb 8 300   46341747
+vm.drop_caches = 3
+bin/animate_tbb 16 300   53955040
+vm.drop_caches = 3
+bin/animate_tbb 32 300   66172520
+vm.drop_caches = 3
+bin/animate_tbb 64 300   95515195
+vm.drop_caches = 3
+bin/animate_tbb 1 350   196053631
+vm.drop_caches = 3
+bin/animate_tbb 2 350   106744870
+vm.drop_caches = 3
+bin/animate_tbb 4 350   62366171
+vm.drop_caches = 3
+bin/animate_tbb 8 350   54807046
+vm.drop_caches = 3
+bin/animate_tbb 16 350   63624219
+vm.drop_caches = 3
+bin/animate_tbb 32 350   78531382
+vm.drop_caches = 3
+bin/animate_tbb 64 350   111887057
+vm.drop_caches = 3
+bin/animate_tbb 1 400   222408774
+vm.drop_caches = 3
+bin/animate_tbb 2 400   121062232
+vm.drop_caches = 3
+bin/animate_tbb 4 400   70697659
+vm.drop_caches = 3
+bin/animate_tbb 8 400   62205809
+vm.drop_caches = 3
+bin/animate_tbb 16 400   72118684
+vm.drop_caches = 3
+bin/animate_tbb 32 400   88506809
+vm.drop_caches = 3
+bin/animate_tbb 64 400   126446472
+vm.drop_caches = 3
+bin/animate_tbb 1 450   249150091
+vm.drop_caches = 3
+bin/animate_tbb 2 450   135847509
+vm.drop_caches = 3
+bin/animate_tbb 4 450   79500511
+vm.drop_caches = 3
+bin/animate_tbb 8 450   69547302
+vm.drop_caches = 3
+bin/animate_tbb 16 450   80401989
+vm.drop_caches = 3
+bin/animate_tbb 32 450   99271334
+vm.drop_caches = 3
+bin/animate_tbb 64 450   141006355
+vm.drop_caches = 3
+bin/animate_tbb 1 500   280282502
+vm.drop_caches = 3
+bin/animate_tbb 2 500   152583152
+vm.drop_caches = 3
+bin/animate_tbb 4 500   88469972
+vm.drop_caches = 3
+bin/animate_tbb 8 500   78079011
+vm.drop_caches = 3
+bin/animate_tbb 16 500   90370730
+vm.drop_caches = 3
+bin/animate_tbb 32 500   111024766
+vm.drop_caches = 3
+bin/animate_tbb 64 500   155799815
+
